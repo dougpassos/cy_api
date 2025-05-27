@@ -22,6 +22,18 @@ class LoginPage {
             },      
         })
     }
+
+    loginErrorGet(email, pass){
+        return cy.request({
+            method: 'GET',
+            url: `/login`,
+            failOnStatusCode: false,
+            body: {
+                email: email,
+                password: pass                
+            },      
+        })
+    }
 }
 
 export const loginPage = new LoginPage()
